@@ -1,6 +1,5 @@
 export type CommonSchema = {
   description?: string
-  nullable?: boolean
 }
 
 // todo: BigInt support
