@@ -10,7 +10,7 @@ export class StringSchemaType extends SchemaType<StringSchema, string> {
         type: 'string',
         ...schema
       },
-    );
+    )
   }
 }
 
