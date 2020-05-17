@@ -1,4 +1,4 @@
-import { AnySchemaType, SchemaType } from '@lib/SchemaType'
+import { AnySchemaType, SchemaType } from './SchemaType'
 import * as t from 'io-ts'
 
 type OptionalCodec<T extends t.Any> = t.UnionType<

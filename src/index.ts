@@ -1,4 +1,7 @@
 export * from './OpenApi/Schema'
+export * from './Boolean'
+export * from './List'
+export * from './Literal'
 export * from './Number'
 export * from './Optional'
 export * from './Record'

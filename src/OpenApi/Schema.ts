@@ -50,11 +50,17 @@ export interface ObjectSchema<T extends Record<string, any>, K extends keyof T> 
   required: K[]
 }
 
+export interface ArraySchema<U> extends CommonSchema {
+  type: 'array'
+  items: Schema<U>
+}
+
 export type Schema<T> =
   T extends number ? NumericSchema :
   T extends string ? StringSchema :
   T extends boolean ? BooleanSchema :
-  T extends Array<any> ? UnionSchema<T> :
+  T extends [any, any, ...Array<any>] ? UnionSchema<T> :
+  T extends Array<infer U> ? ArraySchema<U> :
   T extends Record<string, any> ? ObjectSchema<T, keyof T> :
     never
 

@@ -1,4 +1,4 @@
-import { Schema } from '@lib/OpenApi/Schema'
+import { Schema } from './OpenApi/Schema'
 import * as t from 'io-ts'
 
 export class SchemaType<S extends Schema<any>, C extends t.Any> {

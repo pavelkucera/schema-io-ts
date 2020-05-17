@@ -1,9 +1,9 @@
-import { record } from '@lib/Record'
-import { string } from '@lib/String'
-import { number } from '@lib/Number'
-import { union } from '@lib/Union'
+import { record } from '../src'
+import { string } from '../src'
+import { number } from '../src'
+import { union } from '../src'
 import { fold } from 'fp-ts/lib/Either'
-import { AnySchemaType } from '@lib/SchemaType'
+import { AnySchemaType } from '../src'
 
 describe('Validation', () => {
   const isValid = (type: AnySchemaType, value: unknown) => fold(

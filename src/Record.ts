@@ -1,4 +1,4 @@
-import { MixedSchemaType, SchemaType } from '@lib/SchemaType'
+import { MixedSchemaType, SchemaType } from './SchemaType'
 import { AnySchema, ObjectSchema, PropertySchemas } from './OpenApi/Schema'
 import * as t from 'io-ts'
 import { fold } from 'fp-ts/lib/Either'
