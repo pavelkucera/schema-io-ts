@@ -40,9 +40,25 @@ export interface UnionSchema<CS extends Array<any>> extends CommonSchema {
   oneOf: Array<Schema<CS[number]>>
 }
 
+export type PropertySchemas<T extends Record<string, any>> = {
+  [PropertyName in keyof T]: Schema<T[PropertyName]>
+}
+
+export interface ObjectSchema<T extends Record<string, any>, K extends keyof T> extends CommonSchema {
+  type: 'object'
+  properties: PropertySchemas<T>
+  required: K[]
+}
+
 export type Schema<T> =
   T extends number ? NumericSchema :
   T extends string ? StringSchema :
   T extends boolean ? BooleanSchema :
   T extends Array<any> ? UnionSchema<T> :
+  T extends Record<string, any> ? ObjectSchema<T, keyof T> :
+  T extends unknown ? unknown :
     never
+
+export type MixedSchema = Schema<unknown>
+
+export type AnySchema = Schema<any>
