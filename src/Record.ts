@@ -1,5 +1,5 @@
 import { MixedSchemaType, SchemaType } from '@lib/SchemaType'
-import { MixedSchema, ObjectSchema, PropertySchemas } from './Schema'
+import { AnySchema, ObjectSchema, PropertySchemas } from './Schema'
 import * as t from 'io-ts'
 import { fold } from 'fp-ts/lib/Either'
 
@@ -26,7 +26,7 @@ export class RecordSchemaType<T extends Record<string, MixedSchemaType>>
 
 export const record = <T extends Record<string, MixedSchemaType>>(props: T): RecordSchemaType<T> => {
   // todo: strict type checking
-  const propertySchemas: Record<string, MixedSchema> = {}
+  const propertySchemas: Record<string, AnySchema> = {}
   const codecProperties: Record<string, t.Mixed> = {}
   const required = []
 

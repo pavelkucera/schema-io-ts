@@ -56,9 +56,6 @@ export type Schema<T> =
   T extends boolean ? BooleanSchema :
   T extends Array<any> ? UnionSchema<T> :
   T extends Record<string, any> ? ObjectSchema<T, keyof T> :
-  T extends unknown ? unknown :
     never
-
-export type MixedSchema = Schema<unknown>
 
 export type AnySchema = Schema<any>
