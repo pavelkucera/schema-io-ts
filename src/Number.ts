@@ -3,7 +3,7 @@ import { CommonSchema, NumberSchema } from '@lib/Schema'
 import * as t from 'io-ts'
 
 export class NumberSchemaType extends SchemaType<NumberSchema, t.NumberC> {
-  constructor(schema: CommonSchema) {
+  constructor(schema?: CommonSchema) {
     super(
       {
         type: 'number',
@@ -14,5 +14,5 @@ export class NumberSchemaType extends SchemaType<NumberSchema, t.NumberC> {
   }
 }
 
-export const number = (schema: CommonSchema) =>
+export const number = (schema?: CommonSchema) =>
   new NumberSchemaType(schema)

@@ -3,7 +3,7 @@ import { CommonSchema, StringSchema } from '@lib/Schema'
 import * as t from 'io-ts'
 
 export class StringSchemaType extends SchemaType<StringSchema, t.StringC> {
-  constructor(schema: CommonSchema) {
+  constructor(schema?: CommonSchema) {
     super(
       {
         type: 'string',
@@ -14,5 +14,5 @@ export class StringSchemaType extends SchemaType<StringSchema, t.StringC> {
   }
 }
 
-export const string = (schema: CommonSchema) =>
+export const string = (schema?: CommonSchema) =>
   new StringSchemaType(schema)
