@@ -48,7 +48,8 @@ export type BooleanSchema =
   }
 
 export type UnionSchema<CS extends Array<any>> =
-  {
+  & CommonSchema
+  & {
     oneOf: Array<Schema<CS[number]>>
   }
 
