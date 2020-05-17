@@ -2,14 +2,14 @@ import { SchemaType } from '@lib/SchemaType'
 import { CommonSchema, StringSchema } from '@lib/Schema'
 import * as t from 'io-ts'
 
-export class StringSchemaType extends SchemaType<StringSchema, string> {
+export class StringSchemaType extends SchemaType<StringSchema, t.StringC> {
   constructor(schema: CommonSchema) {
     super(
-      t.string,
       {
         type: 'string',
         ...schema
       },
+      t.string
     )
   }
 }
