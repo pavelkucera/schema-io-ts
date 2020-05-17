@@ -1,1 +1,7 @@
 export * from './OpenApi/Schema'
+export * from './Number'
+export * from './Optional'
+export * from './Record'
+export * from './SchemaType'
+export * from './String'
+export * from './Union'
