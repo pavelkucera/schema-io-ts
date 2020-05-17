@@ -1,5 +1,5 @@
 import { AnySchemaType, MixedSchemaType, SchemaType } from '@lib/SchemaType'
-import { CommonSchema, UnionSchema } from '@lib/Schema'
+import { CommonSchema, UnionSchema } from '@lib/OpenApi/Schema'
 import * as t from 'io-ts'
 
 export class UnionSchemaType<

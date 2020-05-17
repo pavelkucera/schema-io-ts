@@ -1,5 +1,5 @@
 import { SchemaType } from '@lib/SchemaType'
-import { CommonSchema, StringSchema } from '@lib/Schema'
+import { CommonSchema, StringSchema } from '@lib/OpenApi/Schema'
 import * as t from 'io-ts'
 
 export class StringSchemaType extends SchemaType<StringSchema, t.StringC> {

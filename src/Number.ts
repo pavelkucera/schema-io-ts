@@ -1,5 +1,5 @@
 import { SchemaType } from '@lib/SchemaType'
-import { CommonSchema, NumberSchema } from '@lib/Schema'
+import { CommonSchema, NumberSchema } from '@lib/OpenApi/Schema'
 import * as t from 'io-ts'
 
 export class NumberSchemaType extends SchemaType<NumberSchema, t.NumberC> {

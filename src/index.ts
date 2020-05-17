@@ -1,1 +1,1 @@
-export * from './Schema'
+export * from './OpenApi/Schema'
