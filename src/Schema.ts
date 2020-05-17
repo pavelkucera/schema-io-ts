@@ -47,8 +47,14 @@ export type BooleanSchema =
     type: 'boolean'
   }
 
+export type UnionSchema<CS extends Array<any>> =
+  {
+    oneOf: Array<Schema<CS[number]>>
+  }
+
 export type Schema<T> =
   T extends number ? NumericSchema :
   T extends string ? StringSchema :
   T extends boolean ? BooleanSchema :
+  T extends Array<any> ? UnionSchema<T> :
     never
