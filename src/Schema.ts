@@ -3,7 +3,7 @@ export type CommonSchema = {
 }
 
 // todo: BigInt support
-// TypeScript does not excess property check on non-discriminated unions so
+// TypeScript does not do an excess property check on non-discriminated unions so
 // the construct has no practical effect
 // https://github.com/microsoft/TypeScript/issues/20863
 type NumberRange =
