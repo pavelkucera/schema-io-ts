@@ -1,5 +1,5 @@
 import { AnySchemaType, MixedSchemaType, SchemaType } from '@lib/SchemaType'
-import { UnionSchema } from '@lib/Schema'
+import { CommonSchema, UnionSchema } from '@lib/Schema'
 import * as t from 'io-ts'
 
 export class UnionSchemaType<
@@ -9,11 +9,13 @@ export class UnionSchemaType<
     t.UnionC<t.TypeOf<CS[number]['codec']>>
   > {
   constructor(
-    schemaTypes: CS
+    schemaTypes: CS,
+    schema?: CommonSchema
   ) {
     super(
       {
         oneOf: schemaTypes.map(schemaType => schemaType.schema),
+        ...schema,
       },
       t.union(
         schemaTypes.map(schemaType => schemaType.codec) as [t.Mixed, t.Mixed, ...Array<t.Mixed>]
